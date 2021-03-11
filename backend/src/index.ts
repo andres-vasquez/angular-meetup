@@ -12,20 +12,8 @@ export const createNestServer = async (expressInstance) => {
         new ExpressAdapter(expressInstance),
     );
 
-    const corsOptions = {
-        methods: 'GET, POST, PATCH, PUT',
-        preflightContinue: true,
-        optionsSuccessStatus: 204,
-        credentials: true,
-        origin: [
-            'http://localhost:4200/',
-            'http://localhost:4200',
-            'https://angular-meetup-10dbb.web.app/',
-            'https://angular-meetup-10dbb.web.app'
-        ]
-    };
-
-    app.enableCors(corsOptions);
+    const cors = require('cors');
+    app.use(cors({origin: true}));
     return app.init();
 };
 
