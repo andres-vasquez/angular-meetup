@@ -1,0 +1,40 @@
+<mat-toolbar color="primary">
+  <span>Having fun with serverless!</span>
+  <span class="fill-space"></span>
+  <div class="md-toolbar-tools">
+    <button mat-icon-button right>
+      <mat-icon>star</mat-icon>
+    </button>
+  </div>
+</mat-toolbar>
+<mat-divider></mat-divider>
+<mat-card>
+  <mat-card-title>
+    <span>Comments!</span>
+    <button mat-mini-fab color="primary" (click)="openNewPopup()">
+      <mat-icon>add</mat-icon>
+    </button>
+  </mat-card-title>
+  <mat-card-content>
+    <mat-progress-spinner
+      *ngIf="$loading | async"
+      color="primary"
+      mode="indeterminate"
+      value="100">
+    </mat-progress-spinner>
+
+    <mat-list *ngIf="!($loading | async)">
+      <mat-list-item *ngFor="let comment of $comments|async">
+        <app-comment [comment]="comment"
+                     (updateComment)="updateComment($event)"
+                     (deleteComment)="deleteComment($event)"></app-comment>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+  <mat-card-footer>
+    <span>By: Andrés Vasquez</span>
+    <a href="https://github.com/andres-vasquez"> https://github.com/andres-vasquez</a>
+  </mat-card-footer>
+</mat-card>
+<mat-divider></mat-divider>
+<router-outlet></router-outlet>

@@ -1,0 +1,48 @@
+mat-toolbar {
+  .fill-space {
+    flex: 1 1 auto;
+  }
+}
+
+mat-card {
+  margin: 50px;
+  padding: 25px;
+
+  mat-card-content {
+    display: flex;
+
+    mat-list {
+      width: 100%;
+
+      app-comment {
+        width: 100%;
+      }
+    }
+  }
+
+  mat-card-title {
+    padding-bottom: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  mat-card-footer {
+    padding-top: 40px;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+
+    span {
+      margin-right: 10px;
+    }
+  }
+}
+
+.mat-list-item {
+  height: auto !important;
+}
+
+:host ::ng-deep .mat-list-item-content {
+  padding: 0 !important;
+}

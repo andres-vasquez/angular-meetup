@@ -1,0 +1,33 @@
+.content {
+  :host {
+    width: 100%;
+  }
+
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+
+  .info {
+    display: flex;
+    flex-grow: 8;
+    order: 1;
+    flex-direction: column;
+
+    .name {
+      font-weight: bold;
+      font-size: medium;
+      color: #3f51b5;
+    }
+
+    .chips {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+
+  .action-buttons {
+    order: 2;
+    flex-grow: 1;
+  }
+}
+

@@ -1,0 +1,27 @@
+<div class="content">
+  <div class="info">
+    <span class="name">{{comment.name}}:</span>
+    <span>{{comment.comment}}</span>
+
+    <div class="chips">
+      <mat-chip-list class="mat-chip-list-stacked" aria-label="Fruit selection">
+        <mat-chip color="primary">
+          Likes: {{comment.starts}}
+          <mat-icon>star</mat-icon>
+        </mat-chip>
+      </mat-chip-list>
+    </div>
+  </div>
+
+  <div class="action-buttons">
+    <button mat-button color="primary" (click)="like()">
+      <mat-icon>thumb_up_alt</mat-icon>
+    </button>
+    <button mat-button color="warn" (click)="delete()">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </div>
+</div>
+<mat-divider></mat-divider>
+
+

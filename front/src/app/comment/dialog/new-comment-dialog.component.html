@@ -1,0 +1,21 @@
+<h1 mat-dialog-title>Comentarios!</h1>
+<div mat-dialog-content>
+  <p>Déjanos tu comentario...</p>
+  <p>
+    <mat-form-field>
+      <span>Nombre</span>
+      <input matInput [(ngModel)]="data.name">
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field>
+      <span>Comentario</span>
+      <textarea matInput [(ngModel)]="data.comment">
+    </textarea>
+    </mat-form-field>
+  </p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancelar</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Guardar</button>
+</div>
